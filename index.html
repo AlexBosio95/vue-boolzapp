@@ -38,41 +38,95 @@
                 </div>
 
                 <div class="main-screen">
-                    
-                        <div class="bg-dark chat-group">
-                            <div class="header">
-
+                    <!-- Chat Group -->
+                    <div class="bg-white chat-group">
+                        <!-- header -->
+                        <div class="header d-flex align-items-center container">
+                            <div class="img-avatar d-flex align-items-center">
+                                <div class="cliped">
+                                    <img src="./img/avatar_io.jpg" alt="">
+                                </div>
+                                <div class="text-avatar d-flex align-items-center flex-wrap ms-2">
+                                    <div>
+                                        <h5 class="fw-bold">Sofia</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icons d-flex flex-row-reverse">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-rotate"></i>
                             </div>
                         </div>
-                        <div class="bg-danger chat-view">
-                            <div class="header d-flex align-items-center">
-                                <div class="img-avatar">
-                                    <div class="cliped">
-                                        <img src="./img/avatar_1.jpg" alt="">
-                                    </div>
-
+                        <!-- main -->
+                        <div class="main d-flex align-items-center">
+                            <div class="icon">
+                                <div class="cliped">
+                                    <i class="fa-solid fa-bell-slash"></i>
                                 </div>
-                                <div class="icons">
-
-                                </div>
-
                             </div>
-                            <div class="main">
 
-                            </div>
-                            <div class="footer d-flex align-items-center">
-                                    <div class="txt-emoji text-center">
-                                        <i class="fa-regular fa-face-grin"></i>
-                                    </div>
-                                    <div class="txt">
-                                        <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
-                                    </div>
-                                    <div class="txt-rec text-center">
-                                        <i class="fa-solid fa-microphone"></i>
-                                    </div>
+                            <div class="text-description">
+                                <span>Ricevi notifiche di nuovi messaggi</span>
+                                <a href="">Attiva notifiche desktop</a>
                             </div>
                         </div>
-                    
+
+                        <div class="chat-src container d-flex align-items-center">
+                            <div class="input-group">
+                                <span class="input-group-text bg-white text-black-50 w-25 justify-content-center" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+
+                        <div class="chat-list">
+                            <ul>
+                                <li></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <!-- Chat View -->
+                    <div class="bg-white chat-view">
+                        <div class="header d-flex align-items-center container">
+                            <div class="img-avatar d-flex align-items-center">
+                                <div class="cliped">
+                                    <img src="./img/avatar_1.jpg" alt="">
+                                </div>
+                                <div class="text-avatar d-flex align-items-center flex-wrap ms-2">
+                                    <div>
+                                        <h5 class="fw-bold">{{contacts[index].name}}</h5>
+                                        <span>Ultimo accesso oggi {{contacts[index].messages[index].date}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="icons d-flex flex-row-reverse">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                            </div>
+
+                        </div>
+                        <div class="main">
+
+                        </div>
+                        <div class="footer d-flex align-items-center">
+                            <div class="txt-emoji text-center">
+                                <i class="fa-regular fa-face-grin"></i>
+                            </div>
+                            <div class="txt">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio"
+                                    aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="txt-rec text-center">
+                                <i class="fa-solid fa-microphone"></i>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
 

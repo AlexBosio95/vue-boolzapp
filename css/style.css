@@ -34,6 +34,8 @@
     display: flex;
 }
 
+/* common chat-group & chat-view */
+
 .main-screen .chat-group,
 .main-screen .chat-view {
     height: 100%;
@@ -59,16 +61,45 @@
     background-color: #eaeaea;
 }
 
-.chat-view .header .img-avatar .cliped{
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-left: 0.5rem;
+.main-screen .chat-view .header{
+    border-left: 1px solid #b1b1b1;
 }
 
-.chat-view .header .img-avatar .cliped img{
+.main-screen .chat-view .header .img-avatar,
+.main-screen .chat-view .header .icons,
+.main-screen .chat-group .header .img-avatar,
+.main-screen .chat-group .header .icons {
+    width: calc(100% / 2);
+}
+
+.chat-view .header .img-avatar .cliped,
+.chat-group .header .img-avatar .cliped{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.chat-view .header .img-avatar .cliped img,
+.chat-group .header .img-avatar .cliped img{
     width: 100%;
     border-radius: 50%;
 }
+
+.header .img-avatar .text-avatar h5{
+    font-size: 1rem;
+    margin: 0 0.25rem;
+}
+
+.header .img-avatar .text-avatar span{
+    font-size: 0.8rem;
+    margin: 0 0.25rem;
+}
+
+.header .icons i{
+    margin: 0px 5px;
+    color: #b6b3b2;
+}
+
+
 
 
 /* Main */
@@ -81,10 +112,7 @@
     background-position: center;
 }
 
-.main-screen .chat-view .main .img-avatar,
-.main-screen .chat-view .main .icons {
-    width: calc(100% / 2);
-}
+
 
 /* Footer */
 
@@ -104,3 +132,69 @@
     width: 80%;
 }
 
+
+/* Chat Group */
+
+/* main */
+
+/* desktop notification */
+
+.main-screen .chat-group .main{
+    width: 100%;
+    height: 8%;
+    background-color: #8edafc;
+}
+
+.main-screen .chat-group .main .icon{
+    width: 20%;
+}
+
+.main-screen .chat-group .main .text-description{
+    width: 80%;
+}
+
+.main-screen .chat-group .main .cliped{
+    width: 2.8rem;
+    height: 2.8rem;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 0.7rem;
+}
+
+.main-screen .chat-group .main .cliped i{
+    color: #8edafc;
+    line-height: 3rem;
+    font-size: 1.4rem;
+}
+
+.chat-group .main .text-description a{
+    color: black;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+.chat-group .main .text-description span{
+    font-size: 0.8rem;
+}
+
+
+/* chat search */
+
+.chat-group .chat-src {
+    height: 7%;
+    width: 100%;
+    background-color: white;
+}
+
+/* chat list */
+
+.chat-group .chat-list{
+    height: calc(100% - 8% - 8% - 7%);
+    background-color: white;
+}
+
+.chat-group ul li{
+    list-style: none;
+
+}
