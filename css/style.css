@@ -79,17 +79,20 @@
 }
 
 .chat-view .header .img-avatar .cliped img,
-.chat-group .header .img-avatar .cliped img{
+.chat-group .header .img-avatar .cliped img,
+.chat-group .chat-list .cliped img{
     width: 100%;
     border-radius: 50%;
 }
 
-.header .img-avatar .text-avatar h5{
+.header .img-avatar .text-avatar h5,
+.chat-list .text-description h5{
     font-size: 1rem;
     margin: 0 0.25rem;
 }
 
-.header .img-avatar .text-avatar span{
+.header .img-avatar .text-avatar span,
+.chat-list .text-description span{
     font-size: 0.8rem;
     margin: 0 0.25rem;
 }
@@ -135,7 +138,6 @@
 
 /* Chat Group */
 
-/* main */
 
 /* desktop notification */
 
@@ -189,12 +191,34 @@
 
 /* chat list */
 
+.chat-list{
+    overflow-y: auto;
+}
+
 .chat-group .chat-list{
     height: calc(100% - 8% - 8% - 7%);
     background-color: white;
 }
 
-.chat-group ul li{
-    list-style: none;
+.chat-group .chat-list .icon{
+    width: 30%;
+}
 
+.chat-group .chat-list .cliped{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.chat-group .chat-list .text-description{
+    width: 70%;
+}
+
+.chat-group ul{
+    width: 100%;
+    padding: 0;
+}
+
+.chat-group ul li{
+    width: 100%;
+    list-style: none;
 }
