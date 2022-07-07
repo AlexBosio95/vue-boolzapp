@@ -1,7 +1,7 @@
 const app = new Vue ({
     el : '#app',
     data: {
-        indexCurrent: 0,
+        indexActive: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -167,8 +167,8 @@ const app = new Vue ({
         ]
     },
     methods: {
-        getPathImg: function(currentIndex) {
-            return './img/avatar' + this.contacts[currentIndex].avatar + '.jpg'
+        getPathImg: function(index) {
+            return './img/avatar' + this.contacts[index].avatar + '.jpg'
         }
 
     }

@@ -201,7 +201,7 @@
 }
 
 .chat-group .chat-list .icon{
-    width: 30%;
+    width: 25%;
 }
 
 .chat-group .chat-list .cliped{
@@ -210,7 +210,7 @@
 }
 
 .chat-group .chat-list .text-description{
-    width: 70%;
+    width: 75%;
 }
 
 .chat-group ul{
@@ -221,4 +221,14 @@
 .chat-group ul li{
     width: 100%;
     list-style: none;
+}
+
+.chat-list .text-description span{
+    opacity: 0.5;
+}
+
+.chat-list span{
+    opacity: 0.5;
+    font-size: 0.7rem;
+    padding-right: 5px;
 }
