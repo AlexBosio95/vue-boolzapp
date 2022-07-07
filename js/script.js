@@ -169,6 +169,7 @@ const app = new Vue ({
     methods: {
         getPathImg: function(index) {
             return './img/avatar' + this.contacts[index].avatar + '.jpg'
+            
         }
 
     }

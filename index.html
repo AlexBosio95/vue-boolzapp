@@ -90,7 +90,7 @@
                                         </div>
                                     </div>
                                     <div class="text-description">
-                                        <h5 class="fw-bold">{{contacts[indexActive].name}}</h5>
+                                        <h5 class="fw-bold">{{contacts[index].name}}</h5>
                                         <span>Ultimo messaggio inviato</span>
                                     </div>
                                     <span class="position-absolute end-0">15:00</span>
@@ -105,7 +105,7 @@
                         <div class="header d-flex align-items-center container">
                             <div class="img-avatar d-flex align-items-center">
                                 <div class="cliped">
-                                    <img :src="{'./img/avatar' + contacts[indexActive].avatar + '.jpg'}" alt="">
+                                    <img :src="'./img/avatar' + contacts[indexActive].avatar + '.jpg'" alt="">
                                 </div>
                                 <div class="text-avatar d-flex align-items-center flex-wrap ms-2">
                                     <div>
@@ -122,7 +122,15 @@
                             </div>
 
                         </div>
-                        <div class="main">
+                        <div class="main position-relative">
+                            <div class="container position-absolute h-100">
+                                <ul>
+                                    <li class="mt-2 bg-light p-3 w-50 list-group-item rounded-3" v-for="">
+                                        <span>{{contacts[indexActive].messages[indexActive].message}}</span>
+                                    </li>
+                                </ul>
+
+                            </div>
 
                         </div>
                         <div class="footer d-flex align-items-center">

@@ -232,3 +232,11 @@
     font-size: 0.7rem;
     padding-right: 5px;
 }
+
+.message-sent{
+    background-color: lightgreen;
+}
+
+.message-receive{
+    background-color: white;
+}
