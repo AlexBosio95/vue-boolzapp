@@ -1,0 +1,106 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.bg-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.bg-container .bg-up{
+    width: 100%;
+    height: 20vh;
+    background-color: #009688;
+}
+
+.bg-container .bg-down{
+    width: 100%;
+    height: 80vh;
+    background-color: #d8dbd6;
+}
+
+.bg-container .main-screen{
+    width: 80%;
+    margin: 0 auto;
+    height: 95vh;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    display: flex;
+}
+
+.main-screen .chat-group,
+.main-screen .chat-view {
+    height: 100%;
+}
+
+.main-screen .chat-group {
+    width: 30%;
+}
+
+
+/* Chat View */
+
+.main-screen .chat-view{
+    width: 70%;
+}
+
+/* Header */
+
+.main-screen .chat-group .header,
+.main-screen .chat-view .header{
+    width: 100%;
+    height: 8%;
+    background-color: #eaeaea;
+}
+
+.chat-view .header .img-avatar .cliped{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.5rem;
+}
+
+.chat-view .header .img-avatar .cliped img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+
+/* Main */
+
+.main-screen .chat-view .main{
+    width: 100%;
+    height: 84%;
+    background-image: url(../img/mine.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.main-screen .chat-view .main .img-avatar,
+.main-screen .chat-view .main .icons {
+    width: calc(100% / 2);
+}
+
+/* Footer */
+
+.main-screen .chat-view .footer {
+    width: 100%;
+    height: 8%;
+    background-color: #f3eeea;
+}
+
+.main-screen .chat-view .footer .txt-emoji,
+.main-screen .chat-view .footer .txt-rec{
+    width: 10%;
+    font-size: 1.3rem;
+}
+
+.main-screen .chat-view .footer .txt{
+    width: 80%;
+}
+
