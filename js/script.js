@@ -4,6 +4,8 @@ const app = new Vue ({
         indexActive: 0,
         newMessage: '',
         itemSearch: '',
+        isVisible: false,
+        menuActive: null,
         contacts: [
             {
                 name: 'Michele',
@@ -232,6 +234,11 @@ const app = new Vue ({
         deleteMessage: function(currentIndex) {
             console.log(currentIndex)
             this.contacts[this.indexActive].messages.splice(currentIndex, 1);
+            this.isVisible = false
+        },
+        menuShow: function(currentIndex){
+                this.menuActive = currentIndex;
+                this.isVisible = !this.isVisible
         }
 
     },

@@ -39,7 +39,7 @@
 
                 <div class="main-screen">
                     <!-- Chat Group -->
-                    <div class="bg-white chat-group">
+                    <div class="bg-white chat-group" @click="isVisible = false">
                         <!-- header -->
                         <div class="header d-flex align-items-center container">
                             <div class="img-avatar d-flex align-items-center">
@@ -131,8 +131,8 @@
                                     :class="(message.status == 'sent') ? 'message-sent' : 'message-received'">
                                     <p class="mt-1">{{message.message}}</p>
                                     <span class="position-absolute">{{message.date.substring(11,16)}}</span>
-                                    <span v-if="message.status == 'sent'" class="position-absolute arrow-down"><i class="fa-solid fa-angle-down"></i></span>
-                                    <div v-if="message.status == 'sent'" class="message-option-menu">
+                                    <span v-if="message.status == 'sent'" class="position-absolute arrow-down" @click="menuShow(index)"><i class="fa-solid fa-angle-down"></i></span>
+                                    <div v-if="isVisible === true && menuActive === index" class="message-option-menu">
                                         <p>Message Info</p>
                                         <p @click="deleteMessage(index)">Message delete</p>
                                     </div>
@@ -141,7 +141,7 @@
                             </div>
 
                         </div>
-                        <div class="footer d-flex align-items-center">
+                        <div class="footer d-flex align-items-center" @click="isVisible = false">
                             <div class="txt-emoji text-center">
                                 <i class="fa-regular fa-face-grin"></i>
                             </div>
