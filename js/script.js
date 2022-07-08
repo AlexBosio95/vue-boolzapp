@@ -3,7 +3,7 @@ const app = new Vue ({
     data: {
         indexActive: 0,
         newMessage: '',
-        timer: 0,
+        itemSearch: '',
         contacts: [
             {
                 name: 'Michele',
@@ -213,6 +213,24 @@ const app = new Vue ({
 
            
         },
+
+        searchUser: function() {
+
+            for (let index = 0; index < this.contacts.length; index++) {
+                
+                let nameContacts = this.contacts[index].name;
+                let nameSearchUser = this.itemSearch;
+
+                console.log(nameContacts)
+
+                if (nameContacts.includes(nameSearchUser)) {
+                    this.contacts[index].visible = true;
+                } else {
+                    this.contacts[index].visible = false;
+                }
+                
+            }
+        }
 
     },
 

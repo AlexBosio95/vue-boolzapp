@@ -77,14 +77,15 @@
                                 <span class="input-group-text bg-white text-black-50 w-25 justify-content-center"
                                     id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                                    aria-label="Username" aria-describedby="basic-addon1">
+                                    aria-label="Username" aria-describedby="basic-addon1" v-model="itemSearch" @KeyUp.Enter="searchUser()">
                             </div>
                         </div>
 
                         <div class="chat-list">
                             <ul>
                                 <li class="d-flex py-2 border border-secondary border-opacity-10 list-group-item-action position-relative"
-                                    v-for="(contact, index) in contacts" @click="getCurrentAvatar(index)">
+                                    v-for="(contact, index) in contacts" @click="getCurrentAvatar(index)"
+                                    v-if="contact.visible">
                                     <div class="icon d-flex justify-content-center">
                                         <div class="cliped">
                                             <img :src="getPathImg(index)" alt="">
