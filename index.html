@@ -125,8 +125,8 @@
                         <div class="main position-relative">
                             <div class="container position-absolute h-100">
                                 <ul>
-                                    <li class="mt-2 bg-light p-3 w-50 list-group-item rounded-3" v-for="">
-                                        <span>{{contacts[indexActive].messages[indexActive].message}}</span>
+                                    <li class="mt-2 bg-light p-2 w-50 list-group-item rounded-3" v-for="(message, index) in contacts[indexActive].messages">
+                                        {{contacts[index].messages[index].message}}
                                     </li>
                                 </ul>
 
@@ -139,7 +139,7 @@
                             </div>
                             <div class="txt">
                                 <input type="text" class="form-control" placeholder="Scrivi un messaggio"
-                                    aria-label="Username" aria-describedby="basic-addon1">
+                                    aria-label="Scrivi un messaggio" aria-describedby="basic-addon1">
                             </div>
                             <div class="txt-rec text-center">
                                 <i class="fa-solid fa-microphone"></i>
