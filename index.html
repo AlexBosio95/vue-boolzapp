@@ -125,10 +125,11 @@
                         </div>
                         <div class="main position-relative">
                             <div class="container position-absolute h-100 d-flex flex-column">
-                                <div class="mt-2 p-2 w-50 rounded-3"
+                                <div class="m-3 p-2 w-50 rounded-3 position-relative"
                                     v-for="(message, index) in contacts[indexActive].messages"
                                     :class="(message.status == 'sent') ? 'message-sent' : 'message-received'">
                                     <p>{{message.message}}</p>
+                                    <span class="position-absolute">{{message.date}}</span>
                                 </div>
 
                             </div>
