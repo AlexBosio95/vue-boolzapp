@@ -255,4 +255,10 @@
     opacity: 0.6;
 }
 
+.chat-view .main .arrow-down{
+    top: 0;
+    right: 5px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
 

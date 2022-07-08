@@ -129,8 +129,9 @@
                                 <div class="m-2 p-2 w-50 rounded-3 position-relative"
                                     v-for="(message, index) in contacts[indexActive].messages"
                                     :class="(message.status == 'sent') ? 'message-sent' : 'message-received'">
-                                    <p>{{message.message}}</p>
+                                    <p class="mt-1">{{message.message}}</p>
                                     <span class="position-absolute">{{message.date}}</span>
+                                    <span v-if="message.status == 'sent'" class="position-absolute arrow-down"><i class="fa-solid fa-angle-down"></i></span>
                                 </div>
 
                             </div>
