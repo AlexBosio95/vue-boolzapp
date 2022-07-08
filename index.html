@@ -83,7 +83,8 @@
 
                         <div class="chat-list">
                             <ul>
-                                <li class="d-flex py-2 border border-secondary border-opacity-10 list-group-item-action position-relative" v-for="(contact, index) in contacts" @click="getCurrentAvater(index)">
+                                <li class="d-flex py-2 border border-secondary border-opacity-10 list-group-item-action position-relative" 
+                                v-for="(contact, index) in contacts" @click="getCurrentAvatar(index)">
                                     <div class="icon d-flex justify-content-center">
                                         <div class="cliped">
                                             <img :src="getPathImg(index)" alt="">
@@ -110,7 +111,7 @@
                                 <div class="text-avatar d-flex align-items-center flex-wrap ms-2">
                                     <div>
                                         <h5 class="fw-bold">{{contacts[indexActive].name}}</h5>
-                                        <span>Ultimo accesso oggi {{contacts[indexActive].messages[indexActive].date}}</span>
+                                        <span>Ultimo accesso oggi {{contacts[indexActive].messages[0].date}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +126,8 @@
                         <div class="main position-relative">
                             <div class="container position-absolute h-100">
                                 <ul>
-                                    <li class="mt-2 p-3 w-50 list-group-item rounded-3" v-for="(message, index) in contacts[indexActive].messages" :class="{'message-sent' : contacts[index].messages[index].status = 'sent', 'message-received' : contacts[index].messages[index].status = 'received'}" >
+                                    <li class="mt-2 p-3 w-50 list-group-item rounded-3" v-for="(message, index) in contacts[indexActive].messages" 
+                                    :class="{'message-sent' : contacts[index].messages[index].status = 'sent', 'message-received' : contacts[index].messages[index].status = 'received'}" >
                                         {{contacts[index].messages[index].message}}
                                     </li>
                                 </ul>

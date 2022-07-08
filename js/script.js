@@ -168,14 +168,15 @@ const app = new Vue ({
     },
     methods: {
         getPathImg: function(index) {
-            return './img/avatar' + this.contacts[index].avatar + '.jpg'
+            return './img/avatar' + this.contacts[index].avatar + '.jpg';
             
         },
 
-        getCurrentAvater: function(currentIndex) {
-            return this.indexActive = currentIndex;
+        getCurrentAvatar: function(currentIndex) {
+            console.log(currentIndex)
+            this.indexActive = currentIndex;
         }
 
-    }
+    },
 
 })
