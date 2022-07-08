@@ -83,7 +83,7 @@
 
                         <div class="chat-list">
                             <ul>
-                                <li class="d-flex py-2 border border-secondary border-opacity-10 list-group-item-action position-relative" v-for="(contact, index) in contacts">
+                                <li class="d-flex py-2 border border-secondary border-opacity-10 list-group-item-action position-relative" v-for="(contact, index) in contacts" @click="getCurrentAvater(index)">
                                     <div class="icon d-flex justify-content-center">
                                         <div class="cliped">
                                             <img :src="getPathImg(index)" alt="">
@@ -125,7 +125,7 @@
                         <div class="main position-relative">
                             <div class="container position-absolute h-100">
                                 <ul>
-                                    <li class="mt-2 p-3 w-50 list-group-item rounded-3" v-for="(message, index) in contacts[indexActive].messages" :class="{'message-sent' : contacts[indexActive].messages[indexActive].status = 'sent', 'message-received' : contacts[indexActive].messages[indexActive].status = 'received'}">
+                                    <li class="mt-2 p-3 w-50 list-group-item rounded-3" v-for="(message, index) in contacts[indexActive].messages" :class="{'message-sent' : contacts[index].messages[index].status = 'sent', 'message-received' : contacts[index].messages[index].status = 'received'}" >
                                         {{contacts[index].messages[index].message}}
                                     </li>
                                 </ul>
