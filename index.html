@@ -95,7 +95,7 @@
                                         <h5 class="fw-bold">{{contact.name}}</h5>
                                         <span>{{ contact.messages[contact.messages.length - 1].message }}</span>
                                     </div>
-                                    <span class="position-absolute end-0">15:00</span>
+                                    <span class="position-absolute end-0">{{ contact.messages[contact.messages.length - 1].date.substring(11,16) }}</span>
                                 </li>
                             </ul>
 
@@ -112,7 +112,7 @@
                                 <div class="text-avatar d-flex align-items-center flex-wrap ms-2">
                                     <div>
                                         <h5 class="fw-bold">{{contacts[indexActive].name}}</h5>
-                                        <span>Ultimo accesso oggi {{contacts[indexActive].messages[0].date}}</span>
+                                        <span>Ultimo accesso oggi {{contacts[indexActive].messages[0].date.substring(11,16)}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                                     v-for="(message, index) in contacts[indexActive].messages"
                                     :class="(message.status == 'sent') ? 'message-sent' : 'message-received'">
                                     <p class="mt-1">{{message.message}}</p>
-                                    <span class="position-absolute">{{message.date}}</span>
+                                    <span class="position-absolute">{{message.date.substring(11,16)}}</span>
                                     <span v-if="message.status == 'sent'" class="position-absolute arrow-down"><i class="fa-solid fa-angle-down"></i></span>
                                     <div v-if="message.status == 'sent'" class="message-option-menu">
                                         <p>Message Info</p>
