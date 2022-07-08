@@ -2,6 +2,9 @@ const app = new Vue ({
     el : '#app',
     data: {
         indexActive: 0,
+        newMessage: '',
+        today : new Date(),
+        time: null,
         contacts: [
             {
                 name: 'Michele',
@@ -175,8 +178,28 @@ const app = new Vue ({
         getCurrentAvatar: function(currentIndex) {
             console.log(currentIndex)
             this.indexActive = currentIndex;
+        },
+        newMessageToAdd: function() {
+           console.log(this.time)
+           this.contacts[this.indexActive].messages.push({
+               date: this.time,
+               message: this.newMessage,
+               status: 'sent'
+           })
+           this.newMessage = ''
+        },
+
+        timeFormat: function(){
+            this.time = this.today.getHours() + ":" + this.today.getMinutes();
         }
 
     },
+
+    created() {
+
+        this.timeFormat()
+        console.log(this.time)
+    
+      }
 
 })
