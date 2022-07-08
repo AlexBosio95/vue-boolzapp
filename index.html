@@ -125,7 +125,7 @@
                         <div class="main position-relative">
                             <div class="container position-absolute h-100">
                                 <ul>
-                                    <li class="mt-2 bg-light p-2 w-50 list-group-item rounded-3" v-for="(message, index) in contacts[indexActive].messages">
+                                    <li class="mt-2 p-3 w-50 list-group-item rounded-3" v-for="(message, index) in contacts[indexActive].messages" :class="{'message-sent' : contacts[indexActive].messages[indexActive].status = 'sent', 'message-received' : contacts[indexActive].messages[indexActive].status = 'received'}">
                                         {{contacts[index].messages[index].message}}
                                     </li>
                                 </ul>

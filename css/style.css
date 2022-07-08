@@ -234,9 +234,15 @@
 }
 
 .message-sent{
-    background-color: lightgreen;
+    background-color: #d5f9ba;
 }
 
-.message-receive{
+.message-received{
     background-color: white;
 }
+
+.chat-view .main .container{
+    overflow-y: auto;
+}
+
+
