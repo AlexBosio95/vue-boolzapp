@@ -3,8 +3,7 @@ const app = new Vue ({
     data: {
         indexActive: 0,
         newMessage: '',
-        today : new Date(),
-        time: null,
+        timer: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -179,27 +178,42 @@ const app = new Vue ({
             console.log(currentIndex)
             this.indexActive = currentIndex;
         },
-        newMessageToAdd: function() {
-           console.log(this.time)
-           this.contacts[this.indexActive].messages.push({
-               date: this.time,
-               message: this.newMessage,
-               status: 'sent'
-           })
-           this.newMessage = ''
+
+        sendReply: function(){
+            const today = new Date();
+
+            this.contacts[this.indexActive].messages.push({
+                date: `${today.getHours()}:${today.getMinutes()}`,
+                message: 'ok',
+                status: 'received'
+            })
+
         },
 
-        timeFormat: function(){
-            this.time = this.today.getHours() + ":" + this.today.getMinutes();
-        }
+        newMessageToAdd: function() {
+
+            const today = new Date();
+           
+            if (this.newMessage !== '') {
+                this.contacts[this.indexActive].messages.push({
+                    date: `${today.getHours()}:${today.getMinutes()}`,
+                    message: this.newMessage,
+                    status: 'sent'
+                })
+
+                this.newMessage = ''
+
+                setTimeout(() => {
+
+                    this.sendReply()
+
+                }, 2000);                
+
+            }
+
+           
+        },
 
     },
-
-    created() {
-
-        this.timeFormat()
-        console.log(this.time)
-    
-      }
 
 })
