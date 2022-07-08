@@ -236,10 +236,12 @@
 
 .message-sent{
     background-color: #d5f9ba;
+    align-self: flex-end;
 }
 
 .message-received{
     background-color: white;
+    align-self: flex-start;
 }
 
 .chat-view .main .container{
