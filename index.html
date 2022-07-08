@@ -21,7 +21,7 @@
     <!-- My Style CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>Document</title>
+    <title>Boolzapp</title>
 </head>
 
 <body>
@@ -92,8 +92,8 @@
                                         </div>
                                     </div>
                                     <div class="text-description">
-                                        <h5 class="fw-bold">{{contacts[index].name}}</h5>
-                                        <span>Ultimo messaggio inviato</span>
+                                        <h5 class="fw-bold">{{contact.name}}</h5>
+                                        <span>{{ contact.messages[contact.messages.length - 1].message }}</span>
                                     </div>
                                     <span class="position-absolute end-0">15:00</span>
                                 </li>
@@ -163,7 +163,9 @@
     </main>
 
 
-
+    <!-- CDN Day.js -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
 
     <!-- Import my js -->
     <script type="text/javascript" src="./js/script.js"></script>

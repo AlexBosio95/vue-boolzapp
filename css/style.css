@@ -94,7 +94,7 @@
 .header .img-avatar .text-avatar span,
 .chat-list .text-description span{
     font-size: 0.8rem;
-    margin: 0 0.25rem;
+    margin: 0 auto;
 }
 
 .header .icons i{
@@ -260,6 +260,7 @@
     right: 5px;
     font-size: 0.9rem;
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .chat-view .message-option-menu{
@@ -270,6 +271,7 @@
     padding: 6px;
     text-align: center;
     border-radius: 0.3rem;
+    display: none;
     
 }
 
@@ -280,3 +282,37 @@
     cursor: pointer;    
 }
 
+@media screen and (max-width: 700px) {
+
+    .main-screen .chat-group {
+        display: none;
+    }
+    
+    
+    /* Chat View */
+    
+    .main-screen .chat-view{
+        width: 100%;
+    }
+
+    .chat-group .main .text-description a{
+        display: none;
+    }
+    
+    .chat-group .main .text-description span{
+        display: none;
+    }
+
+  }
+
+  @media screen and (max-width: 900px) {
+
+    .chat-group .main .text-description a{
+        display: none;
+    }
+    
+    .chat-group .main .text-description span{
+        display: none;
+    }
+
+  }
