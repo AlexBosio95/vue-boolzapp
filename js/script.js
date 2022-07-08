@@ -218,8 +218,8 @@ const app = new Vue ({
 
             for (let index = 0; index < this.contacts.length; index++) {
                 
-                let nameContacts = this.contacts[index].name;
-                let nameSearchUser = this.itemSearch;
+                let nameContacts = this.contacts[index].name.toLowerCase();
+                let nameSearchUser = this.itemSearch.toLowerCase();
 
                 console.log(nameContacts)
 
