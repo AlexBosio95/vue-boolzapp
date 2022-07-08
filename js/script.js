@@ -221,8 +221,6 @@ const app = new Vue ({
                 let nameContacts = this.contacts[index].name.toLowerCase();
                 let nameSearchUser = this.itemSearch.toLowerCase();
 
-                console.log(nameContacts)
-
                 if (nameContacts.includes(nameSearchUser)) {
                     this.contacts[index].visible = true;
                 } else {
@@ -230,6 +228,10 @@ const app = new Vue ({
                 }
                 
             }
+        },
+        deleteMessage: function(currentIndex) {
+            console.log(currentIndex)
+            this.contacts[this.indexActive].messages.splice(currentIndex, 1);
         }
 
     },

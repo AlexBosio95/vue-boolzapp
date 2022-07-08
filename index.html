@@ -134,7 +134,7 @@
                                     <span v-if="message.status == 'sent'" class="position-absolute arrow-down"><i class="fa-solid fa-angle-down"></i></span>
                                     <div v-if="message.status == 'sent'" class="message-option-menu">
                                         <p>Message Info</p>
-                                        <p>Message delete</p>
+                                        <p @click="deleteMessage(index)">Message delete</p>
                                     </div>
                                 </div>
 
