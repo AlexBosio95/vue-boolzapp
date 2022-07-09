@@ -94,7 +94,9 @@
 .header .img-avatar .text-avatar span,
 .chat-list .text-description span{
     font-size: 0.8rem;
-    margin: 0 auto;
+    margin: 0 0.8rem 0 0.25rem;
+    display: block;
+    opacity: 0.5;
 }
 
 .header .icons i{
@@ -224,11 +226,11 @@
     cursor: pointer;
 }
 
-.chat-list .text-description span{
-    opacity: 0.5;
+.chat-group ul li:hover{
+    background-color:#eaeaea;
 }
 
-.chat-list span{
+.chat-list .date span{
     opacity: 0.5;
     font-size: 0.7rem;
     padding-right: 5px;
