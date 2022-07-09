@@ -185,7 +185,7 @@ const app = new Vue ({
             const today = new Date();
 
             this.contacts[this.indexActive].messages.push({
-                date: `${today.getHours()}:${today.getMinutes()}`,
+                date: `${this.addZero(today.getDay())}/${this.addZero(today.getMonth())}/${today.getFullYear()} ${this.addZero(today.getHours())}:${this.addZero(today.getMinutes())}:${today.getSeconds()}`,
                 message: 'ok',
                 status: 'received'
             })
@@ -198,7 +198,7 @@ const app = new Vue ({
            
             if (this.newMessage !== '') {
                 this.contacts[this.indexActive].messages.push({
-                    date: `${today.getHours()}:${today.getMinutes()}`,
+                    date: `${this.addZero(today.getDay())}/${this.addZero(today.getMonth())}/${today.getFullYear()} ${this.addZero(today.getHours())}:${this.addZero(today.getMinutes())}:${today.getSeconds()}`,
                     message: this.newMessage,
                     status: 'sent'
                 })
@@ -209,7 +209,7 @@ const app = new Vue ({
 
                     this.sendReply()
 
-                }, 2000);                
+                }, 1000);                
 
             }
 
@@ -239,7 +239,11 @@ const app = new Vue ({
         menuShow: function(currentIndex){
                 this.menuActive = currentIndex;
                 this.isVisible = !this.isVisible
-        }
+        },
+        addZero: function(i) {
+            if (i < 10) {i = "0" + i}
+            return i;
+          }
 
     },
 
