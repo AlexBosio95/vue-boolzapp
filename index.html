@@ -124,22 +124,25 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="icons d-flex flex-row-reverse position-relative">
+                            <div class="icons d-flex flex-row-reverse position-relative align-items-center">
                                 <i @click="menuDeleteChatShow()" class="fa-solid fa-ellipsis-vertical"></i>
                                 <i class="fa-solid fa-paperclip"></i>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <div v-if="menuDeleteChat === true" class="menu-chat" >
+                                <i @click="searchToggleShow()" class="fa-solid fa-magnifying-glass"></i>
+                                <input @KeyUp="searchUserMessage()" v-if="searchIsShow" type="text" class="form-control" placeholder="Cerca un messaggio..."
+                                    aria-label="Cerca un messaggio" aria-describedby="basic-addon1" v-model.trim="messageSearch">
+                                <div v-if="menuDeleteChat === true" class="menu-chat">
                                     <p @click="deleteChat()"><i class="fa-solid fa-trash-can text-danger"></i> Delete chat</p>
                                 </div>
                             </div>
                             
 
                         </div>
+                        <!-- Chat -->
                         <div class="main position-relative" :class="{'opacity-50' : menuDeleteChat}">
                             <div class="container position-absolute h-100 d-flex flex-column">
                                 <div class="m-2 p-2 rounded-3 position-relative chat-message"
                                     v-for="(message, index) in contacts[indexActive].messages"
-                                    :class="(message.status == 'sent') ? 'message-sent' : 'message-received'">
+                                    :class="(message.status == 'sent') ? 'message-sent' : 'message-received'" v-if="message.visible">
                                     <p class="mt-1">{{message.message}}</p>
                                     <span class="position-absolute">{{message.date.substring(11,16)}}</span>
                                     <span v-if="message.status == 'sent'" class="position-absolute arrow-down" @click="menuShow(index)"><i class="fa-solid fa-angle-down"></i></span>
