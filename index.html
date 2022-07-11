@@ -18,6 +18,10 @@
     <!-- Import vue library -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
+
     <!-- My Style CSS -->
     <link rel="stylesheet" href="./css/style.css">
 
@@ -50,7 +54,7 @@
                                 </div>
                                 <div class="text-avatar d-flex align-items-center flex-wrap ms-2">
                                     <div>
-                                        <h5 class="fw-bold">Sofia</h5>
+                                        <h5 class="fw-normal">Sofia</h5>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +74,7 @@
 
                             <div class="text-description ms-2">
                                 <span>Ricevi notifiche di nuovi messaggi</span>
-                                <a href="">Attiva notifiche desktop</a>
+                                <a href="#">Attiva notifiche desktop</a>
                             </div>
                         </div>
 
@@ -94,7 +98,7 @@
                                         </div>
                                     </div>
                                     <div class="text-description">
-                                        <h5 class="fw-bold">{{contact.name}}</h5>
+                                        <h5 class="fw-normal">{{contact.name}}</h5>
                                         <span>{{ contact.messages[contact.messages.length - 1].message }}</span>
                                     </div>
                                     <div class="date">
@@ -115,30 +119,33 @@
                                 </div>
                                 <div class="text-avatar d-flex align-items-center flex-wrap ms-2">
                                     <div>
-                                        <h5 class="fw-bold">{{contacts[indexActive].name}}</h5>
+                                        <h5 class="fw-normal">{{contacts[indexActive].name}}</h5>
                                         <span>Ultimo accesso oggi {{contacts[indexActive].messages[0].date.substring(11,16)}}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="icons d-flex flex-row-reverse">
+                            <div class="icons d-flex flex-row-reverse position-relative">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                                 <i class="fa-solid fa-paperclip"></i>
                                 <i class="fa-solid fa-magnifying-glass"></i>
-
+                                <div v-if="isVisible === true && menuActive === index" class="menu-chat">
+                                    <p>Delete chat</p>
+                                </div>
                             </div>
+                            
 
                         </div>
                         <div class="main position-relative">
                             <div class="container position-absolute h-100 d-flex flex-column">
-                                <div class="m-2 p-2 w-50 rounded-3 position-relative"
+                                <div class="m-2 p-2 rounded-3 position-relative chat-message"
                                     v-for="(message, index) in contacts[indexActive].messages"
                                     :class="(message.status == 'sent') ? 'message-sent' : 'message-received'">
                                     <p class="mt-1">{{message.message}}</p>
                                     <span class="position-absolute">{{message.date.substring(11,16)}}</span>
                                     <span v-if="message.status == 'sent'" class="position-absolute arrow-down" @click="menuShow(index)"><i class="fa-solid fa-angle-down"></i></span>
                                     <div v-if="isVisible === true && menuActive === index" class="message-option-menu">
-                                        <p>Message Info</p>
-                                        <p @click="deleteMessage(index)">Message delete</p>
+                                        <p> <i class="fa-solid fa-circle-info"></i> Message Info</p>
+                                        <p @click="deleteMessage(index)"> <i class="fa-solid fa-circle-minus"></i> Message delete</p>
                                     </div>
                                 </div>
 
@@ -167,9 +174,8 @@
     </main>
 
 
-    <!-- CDN Day.js -->
-    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    <script>dayjs().format()</script>
+
+    
 
     <!-- Import my js -->
     <script type="text/javascript" src="./js/script.js"></script>

@@ -6,6 +6,7 @@ const app = new Vue ({
         itemSearch: '',
         isVisible: false,
         menuActive: null,
+        menu
         contacts: [
             {
                 name: 'Michele',
@@ -248,3 +249,8 @@ const app = new Vue ({
     },
 
 })
+
+
+let now = moment("12-25-1995", "MM-DD-YYYY")
+
+console.log(now)
