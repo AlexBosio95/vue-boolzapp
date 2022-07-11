@@ -176,19 +176,19 @@ const app = new Vue ({
                         date: '10/01/2020 15:30:55',
                         message: 'Ciao, andiamo a mangiare la pizza stasera?',
                         status: 'received',
-                        visble: true,
+                        visible: true,
                     },
                     {
                         date: '10/01/2020 15:50:00',
                         message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
                         status: 'sent',
-                        visble: true,
+                        visible: true,
                     },
                     {
                         date: '10/01/2020 15:51:00',
                         message: 'OK!!',
                         status: 'received',
-                        visble: true,
+                        visible: true,
                     }
                 ],
             }
@@ -212,7 +212,7 @@ const app = new Vue ({
                 date: `${this.addZero(today.getDay())}/${this.addZero(today.getMonth())}/${today.getFullYear()} ${this.addZero(today.getHours())}:${this.addZero(today.getMinutes())}:${today.getSeconds()}`,
                 message: 'ok',
                 status: 'received',
-                visble: true,
+                visible: true,
             })
 
         },
@@ -226,7 +226,7 @@ const app = new Vue ({
                     date: `${this.addZero(today.getDay())}/${this.addZero(today.getMonth())}/${today.getFullYear()} ${this.addZero(today.getHours())}:${this.addZero(today.getMinutes())}:${today.getSeconds()}`,
                     message: this.newMessage,
                     status: 'sent',
-                    visble: true,
+                    visible: true,
                 })
 
                 this.newMessage = ''
