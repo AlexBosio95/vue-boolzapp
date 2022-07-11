@@ -45,7 +45,7 @@
 
                 <div class="main-screen">
                     <!-- Chat Group -->
-                    <div class="bg-white chat-group" @click="isVisible = false">
+                    <div class="bg-white chat-group" @click="isVisible = false, menuDeleteChat = false">
                         <!-- header -->
                         <div class="header d-flex align-items-center container">
                             <div class="img-avatar d-flex align-items-center">
@@ -125,17 +125,17 @@
                                 </div>
                             </div>
                             <div class="icons d-flex flex-row-reverse position-relative">
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <i @click="menuDeleteChatShow()" class="fa-solid fa-ellipsis-vertical"></i>
                                 <i class="fa-solid fa-paperclip"></i>
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                                <div v-if="isVisible === true && menuActive === index" class="menu-chat">
-                                    <p>Delete chat</p>
+                                <div v-if="menuDeleteChat === true" class="menu-chat" >
+                                    <p @click="deleteChat()"><i class="fa-solid fa-trash-can text-danger"></i> Delete chat</p>
                                 </div>
                             </div>
                             
 
                         </div>
-                        <div class="main position-relative">
+                        <div class="main position-relative" :class="{'opacity-50' : menuDeleteChat}">
                             <div class="container position-absolute h-100 d-flex flex-column">
                                 <div class="m-2 p-2 rounded-3 position-relative chat-message"
                                     v-for="(message, index) in contacts[indexActive].messages"
@@ -152,12 +152,14 @@
                             </div>
 
                         </div>
+                        
                         <div class="footer d-flex align-items-center" @click="isVisible = false">
                             <div class="txt-emoji text-center">
                                 <i class="fa-regular fa-face-grin"></i>
                             </div>
+                            <!-- Chat input text -->
                             <div class="txt">
-                                <input type="text" class="form-control" placeholder="Scrivi un messaggio..."
+                                <input v-if="!menuDeleteChat" type="text" class="form-control" placeholder="Scrivi un messaggio..."
                                     aria-label="Scrivi un messaggio" aria-describedby="basic-addon1" v-model.trim="newMessage" @KeyUp.Enter="newMessageToAdd()">
                             </div>
                             <div class="txt-rec text-center">

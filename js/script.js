@@ -6,7 +6,7 @@ const app = new Vue ({
         itemSearch: '',
         isVisible: false,
         menuActive: null,
-        menu
+        menuDeleteChat: false,
         contacts: [
             {
                 name: 'Michele',
@@ -241,10 +241,21 @@ const app = new Vue ({
                 this.menuActive = currentIndex;
                 this.isVisible = !this.isVisible
         },
+
         addZero: function(i) {
             if (i < 10) {i = "0" + i}
             return i;
-          }
+        },
+
+        menuDeleteChatShow: function(){
+          this.menuDeleteChat = !this.menuDeleteChat
+        },
+
+        deleteChat: function(){
+            this.contacts.splice(this.indexActive, 1)
+            this.menuDeleteChat = false
+        }
+
 
     },
 
