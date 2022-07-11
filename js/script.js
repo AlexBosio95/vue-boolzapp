@@ -211,7 +211,8 @@ const app = new Vue ({
             this.contacts[this.indexActive].messages.push({
                 date: `${this.addZero(today.getDay())}/${this.addZero(today.getMonth())}/${today.getFullYear()} ${this.addZero(today.getHours())}:${this.addZero(today.getMinutes())}:${today.getSeconds()}`,
                 message: 'ok',
-                status: 'received'
+                status: 'received',
+                visble: true,
             })
 
         },
@@ -224,7 +225,8 @@ const app = new Vue ({
                 this.contacts[this.indexActive].messages.push({
                     date: `${this.addZero(today.getDay())}/${this.addZero(today.getMonth())}/${today.getFullYear()} ${this.addZero(today.getHours())}:${this.addZero(today.getMinutes())}:${today.getSeconds()}`,
                     message: this.newMessage,
-                    status: 'sent'
+                    status: 'sent',
+                    visble: true,
                 })
 
                 this.newMessage = ''
